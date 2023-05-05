@@ -520,7 +520,7 @@ int main(int argc, char** argv)
     // define the visualization information of the published velocity and acceleration commands
     {
         _vis_pos.id = _vis_vel.id = _vis_acc.id = 0;
-        _vis_pos.header.frame_id = _vis_vel.header.frame_id = _vis_acc.header.frame_id = "/map";
+        _vis_pos.header.frame_id = _vis_vel.header.frame_id = _vis_acc.header.frame_id = "map";
         
         _vis_pos.ns = "pos";
         _vis_pos.type   = visualization_msgs::Marker::SPHERE;
@@ -670,7 +670,7 @@ void visWayPointPath(MatrixXd path)
 {
     visualization_msgs::Marker points, line_list;
     int id = 0;
-    points.header.frame_id    = line_list.header.frame_id    = "/map";
+    points.header.frame_id    = line_list.header.frame_id    = "map";
     points.header.stamp       = line_list.header.stamp       = ros::Time::now();
     points.ns                 = line_list.ns                 = "wp_path";
     points.action             = line_list.action             = visualization_msgs::Marker::ADD;
